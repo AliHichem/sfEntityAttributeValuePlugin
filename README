@@ -1,0 +1,86 @@
+sfEntityAttributeValuePlugin
+=============================
+
+The `sfEntityAttributeValuePlugin` is a symfony plugin that allows use of the [Entity-Attribute-Value](http://en.wikipedia.org/wiki/Entity-attribute-value_model) 
+data-model as a doctrine behavior.
+
+This plugin provides a way to easily create dynamic fields with [jQuery Form Builder Plugin](http://www.botsko.net/blog/2009/04/jquery-form-builder-plugin/)
+and bind then to a specific object (DB line) of your model. It also allow you 
+to fill in these fields from other models that have a ManyToOne relation with 
+the first one. And finally, these stored EAV can be exploited in edit/read mode.
+
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install sfEntityAttributeValuePlugin -s=beta
+
+  * Activate the plugin in your project configuration file (in config/ProjectConfiguration.class.php).
+
+        class ProjectConfiguration extends sfProjectConfiguration
+        {
+            public function setup()
+            {
+                //...
+                $this->enablePlugins('sfEntityAttributeValuePlugin');
+            }
+        }
+
+  * Apply the EAV behavior to your model in your schema file `config/doctrine/schema.yml` , ie:
+    Assume that we want to bind dynamic fields to each object of a model called "ParentModel" and then 
+    insert data in these fields from a 'ChildModel' who is related as ManyToOne to the "ParentModel", the schema
+    will contain config like this:
+
+        ParentModel:
+          actAs: 
+            EavBehavior:       
+              mode: create
+            columns:
+              ...
+
+        ChildModel:
+          actAs: 
+            EavBehavior:       
+              mode: insert
+              parent_resource: ParentModel
+            columns:
+              parent_model_id:            { type: integer }
+              ...
+          relations:
+            ParentModel:                  { local: parent_model_id, foreign: id }
+
+  * Build Eav models and create tables :
+  
+        $ symfony doctrine:build --all
+
+    alternatively you could build the models, the sql, then run the sql manually
+
+  * Build (or update) the global resource file to affect unique id for all your models
+        
+        $ symfony eav:init-config
+    
+    Important note: this task will create/update the file resources.yml that hold the 
+    models ids, do not change manually this files, this may damage your EAV structure!
+  
+  * Activate the "eav" module in the settings.yml:
+
+        all:
+          .settings:
+            enabled_modules: [ default, eav ]
+
+  * Clear your cache
+
+        $ symfony cc
+
+(future improvements)
+
+Ajax eav child binder: when editing a child entity, eav structure will be updated via Ajax.
+----------------------
+Smart EAV tables cleaner: to clean obsolete data from  eav tables.
+-------------------------
+Required Field support
+----------------------
+Sortable EAV
+------------

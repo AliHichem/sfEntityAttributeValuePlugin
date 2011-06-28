@@ -1,0 +1,5 @@
+
+all:
+  eav_behavior:
+    mode: create
+    parent_resource: null

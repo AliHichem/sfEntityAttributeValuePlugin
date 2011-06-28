@@ -1,0 +1,53 @@
+###################################################    
+# E.A.V
+
+EavGroups:
+  connection: doctrine
+  tableName: eav_groups
+  actAs:
+    Timestampable:        ~
+  columns:
+    ressource_id:         { type: integer, notnull: true }
+    entity_id:            { type: integer, notnull: true }
+    json:                 { type: clob }
+    
+Eav:
+  connection: doctrine
+  tableName: eav
+  columns:
+    eav_group_id:         { type: integer, notnull: true }
+    eav_type_id:          { type: integer, notnull: true }
+    label:                { type: string(255) }
+    code:                 { type: string(5) }
+  relations:
+    EavGroups:
+      local: eav_group_id
+      foreign: id
+      onDelete: CASCADE
+
+EavFullValues:
+  connection: doctrine
+  tableName: eav_full_values
+  columns:
+    eav_id:               { type: integer, notnull: true }
+    value:                { type: clob }
+    is_selected:          { type: boolean, default: false }
+  relations:
+    Eav:
+      local: eav_id
+      foreign: id
+      onDelete: CASCADE
+
+EavValues:
+  connection: doctrine
+  tableName: eav_values
+  columns:
+    eav_full_value_id:    { type: integer, notnull: true }
+    value:                { type: clob }
+    ressource_id:         { type: integer, notnull: true }
+    entity_id:            { type: integer, notnull: true }
+  relations:
+    EavFullValues:
+      local: eav_full_value_id
+      foreign: id
+      onDelete: CASCADE

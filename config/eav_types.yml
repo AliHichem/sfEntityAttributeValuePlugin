@@ -1,0 +1,14 @@
+# sfEntityAttributeValuePlugin - eav_types file 
+# DO NOT change these lines in production environment
+input_text:
+  id: 1
+textarea:
+  id: 2
+select:
+  id: 3
+radio:
+  id: 4
+checkbox:
+  id: 5
+label:
+  id: 6
