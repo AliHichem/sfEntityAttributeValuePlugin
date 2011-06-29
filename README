@@ -73,6 +73,27 @@ Installation
   * Clear your cache
 
         $ symfony cc
+        
+  * Add the sfWidgetFormEav as a widgetSchema in all forms that have the EavBehavior. The sfEntityAttributeValuePlugin
+  is enough smart to render the widget in create or insert mode.
+  
+        // ParentModel
+        class ParentModelForm extends BaseParentModelForm
+        {
+            public function configure()
+            {
+                $this->widgetSchema['eav'] = new sfWidgetFormEav($this);
+            }
+        }
+        
+        // Child model
+        class ChildModelForm extends BaseChildModelForm
+        {
+            public function configure()
+            {
+                $this->widgetSchema['eav'] = new sfWidgetFormEav($this);
+            }
+        }
 
 (future improvements)
 
