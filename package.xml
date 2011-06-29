@@ -22,8 +22,8 @@ the first one. And finally, these stored EAV can be exploited in edit/read mode.
   </lead>
   <date>2011-06-29</date>
   <version>
-    <release>1.1.0</release>
-    <api>1.1.0</api>
+    <release>0.1.6</release>
+    <api>0.1.6</api>
   </version>
   <stability>
     <release>beta</release>
@@ -43,7 +43,6 @@ the first one. And finally, these stored EAV can be exploited in edit/read mode.
         <file role="data" name="config/doctrine/schema.yml" />
         <file role="data" name="config/app.yml" />
         <file role="data" name="config/eav_types.yml" />
-        <file role="data" name="config/resources.yml" />
         <file role="data" name="config/sfEntityAttributeValuePluginConfiguration.class.php" />
         <file role="data" name="lib/filter/doctrine/PluginEavFormFilter.class.php" />
         <file role="data" name="lib/filter/doctrine/PluginEavFullValuesFormFilter.class.php" />
