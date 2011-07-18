@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.4.1" version="2.0"
-   xmlns="http://pear.php.net/dtd/package-2.0"
-   xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
-   http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0
-   http://pear.php.net/dtd/package-2.0.xsd">
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0    http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0    http://pear.php.net/dtd/package-2.0.xsd">
   <name>sfEntityAttributeValuePlugin</name>
   <channel>plugins.symfony-project.org</channel>
   <summary>The `sfEntityAttributeValuePlugin` is a symfony plugin that allows use of the [Entity-Attribute-Value](http://en.wikipedia.org/wiki/Entity-attribute-value_model) 
@@ -20,67 +14,70 @@ the first one. And finally, these stored EAV can be exploited in edit/read mode.
     <email>ali.hichem@mail.com</email>
     <active>yes</active>
   </lead>
-  <date>2011-06-29</date>
+  <date>2011-07-18</date>
   <version>
-    <release>0.1.6</release>
-    <api>0.1.6</api>
+    <release>1.0.4</release>
+    <api>1.0.4</api>
   </version>
   <stability>
-    <release>beta</release>
-    <api>beta</api>
+    <release>stable</release>
+    <api>stable</api>
   </stability>
   <license uri="http://www.symfony-project.com/license">
     MIT license
   </license>
   <notes>
-* beta release
+* stable release
 </notes>
  
   <contents>
     <dir name="/">
-        <file role="data" name="README" />
-        <file role="data" name="LICENSE" />
-        <file role="data" name="config/doctrine/schema.yml" />
-        <file role="data" name="config/app.yml" />
-        <file role="data" name="config/eav_types.yml" />
-        <file role="data" name="config/sfEntityAttributeValuePluginConfiguration.class.php" />
-        <file role="data" name="lib/filter/doctrine/PluginEavFormFilter.class.php" />
-        <file role="data" name="lib/filter/doctrine/PluginEavFullValuesFormFilter.class.php" />
-        <file role="data" name="lib/filter/doctrine/PluginEavGroupsFormFilter.class.php" />
-        <file role="data" name="lib/filter/doctrine/PluginEavValuesFormFilter.class.php" />
-        <file role="data" name="lib/form/doctrine/PluginEavForm.class.php" />
-        <file role="data" name="lib/form/doctrine/PluginEavFullValuesForm.class.php" />
-        <file role="data" name="lib/form/doctrine/PluginEavGroupsForm.class.php" />
-        <file role="data" name="lib/form/doctrine/PluginEavValuesForm.class.php" />
-        <file role="data" name="lib/form/eavDynamicForm.class.php" />
-        <file role="data" name="lib/form/eavDynamicShowForm.class.php" />
-        <file role="data" name="lib/listener/EavBehavior.php" />
-        <file role="data" name="lib/model/doctrine/PluginEav.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavFullValues.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavFullValuesTable.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavGroups.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavGroupsTable.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavTable.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavValues.class.php" />
-        <file role="data" name="lib/model/doctrine/PluginEavValuesTable.class.php" />
-        <file role="data" name="lib/script/sfRessources/AppRetriver.class.php" />
-        <file role="data" name="lib/script/sfRessources/sfEavType.class.php" />
-        <file role="data" name="lib/script/sfRessources/sfRessource.class.php" />
-        <file role="data" name="lib/script/Formbuilder.class.php" />
-        <file role="data" name="lib/task/initConfigTask.class.php" />
-        <file role="data" name="lib/template/EavBehavior.php" />
-        <file role="data" name="lib/widgets/sfWidgetFormEav.class.php" />
-        <file role="data" name="modules/eav/actions/actions.class.php" />
-        <file role="data" name="modules/eav/actions/components.class.php" />
-        <file role="data" name="modules/eav/templates/_form.php" />
-        <file role="data" name="modules/eav/templates/_render.php" />
-        <file role="data" name="modules/eav/templates/_show.php" />
-        <file role="data" name="web/css/jquery.formbuilder.css" />
-        <file role="data" name="web/images/add.png" />
-        <file role="data" name="web/js/jquery.formbuilder.js" />
-        <file role="data" name="web/js/jquery.scrollTo-min.js" />
-        <file role="data" name="web/js/jquery-1.3.2.min.js" />
-        <file role="data" name="web/js/jquery-ui-1.8.2.custom.min.js" />
+        <file role="data" name="README"/>
+        <file role="data" name="LICENSE"/>
+        <file role="data" name="config/doctrine/schema.yml"/>
+        <file role="data" name="config/app.yml"/>
+        <file role="data" name="config/eav_types.yml"/>
+        <file role="data" name="config/sfEntityAttributeValuePluginConfiguration.class.php"/>
+        <file role="data" name="lib/filter/doctrine/PluginEavFormFilter.class.php"/>
+        <file role="data" name="lib/filter/doctrine/PluginEavFullValuesFormFilter.class.php"/>
+        <file role="data" name="lib/filter/doctrine/PluginEavGroupsFormFilter.class.php"/>
+        <file role="data" name="lib/filter/doctrine/PluginEavValuesFormFilter.class.php"/>
+        <file role="data" name="lib/form/doctrine/PluginEavForm.class.php"/>
+        <file role="data" name="lib/form/doctrine/PluginEavFullValuesForm.class.php"/>
+        <file role="data" name="lib/form/doctrine/PluginEavGroupsForm.class.php"/>
+        <file role="data" name="lib/form/doctrine/PluginEavValuesForm.class.php"/>
+        <file role="data" name="lib/form/eavDynamicForm.class.php"/>
+        <file role="data" name="lib/form/eavDynamicShowForm.class.php"/>
+        <file role="data" name="lib/listener/EavBehavior.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEav.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavFullValues.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavFullValuesTable.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavGroups.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavGroupsTable.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavTable.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavValues.class.php"/>
+        <file role="data" name="lib/model/doctrine/PluginEavValuesTable.class.php"/>
+        <file role="data" name="lib/script/sfRessources/AppRetriver.class.php"/>
+        <file role="data" name="lib/script/sfRessources/sfEavType.class.php"/>
+        <file role="data" name="lib/script/sfRessources/sfRessource.class.php"/>
+        <file role="data" name="lib/script/Formbuilder.class.php"/>
+        <file role="data" name="lib/task/initConfigTask.class.php"/>
+        <file role="data" name="lib/template/EavBehavior.php"/>
+        <file role="data" name="lib/widgets/sfWidgetFormEav.class.php"/>
+        <file role="data" name="modules/eav/actions/actions.class.php"/>
+        <file role="data" name="modules/eav/actions/components.class.php"/>
+        <file role="data" name="modules/eav/templates/_form.php"/>
+        <file role="data" name="modules/eav/templates/_render.php"/>
+        <file role="data" name="modules/eav/templates/_show.php"/>
+        <file role="data" name="test/bootstrap/Doctrine.php"/>
+        <file role="data" name="test/bootstrap/unit.php"/>
+        <file role="data" name="test/unit/EavTest.php"/>
+        <file role="data" name="web/css/jquery.formbuilder.css"/>
+        <file role="data" name="web/images/add.png"/>
+        <file role="data" name="web/js/jquery.formbuilder.js"/>
+        <file role="data" name="web/js/jquery.scrollTo-min.js"/>
+        <file role="data" name="web/js/jquery-1.3.2.min.js"/>
+        <file role="data" name="web/js/jquery-ui-1.8.2.custom.min.js"/>
     </dir>
   </contents>
  
@@ -93,12 +90,12 @@ the first one. And finally, these stored EAV can be exploited in edit/read mode.
       <min>1.4.1</min>
     </pearinstaller>
     <package>
-      <name>symfony</name>
-      <channel>pear.symfony-project.com</channel>
-      <min>1.4.0</min>
-      <max>1.5.0</max>
-      <exclude>1.5.0</exclude>
-    </package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.org</channel>
+    <min>1.4</min>
+    <max>1.4</max>
+    <recommended>1.4</recommended>
+   </package>
   </required>
 </dependencies>
  
@@ -106,5 +103,12 @@ the first one. And finally, these stored EAV can be exploited in edit/read mode.
 </phprelease>
  
 <changelog>
+<release>
+<notes>
+* add Unit Tests
+* update readme
+* translate script comment
+</notes>
+</release>
 </changelog>
 </package>

@@ -15,7 +15,7 @@ Installation
 
   * Install the plugin
 
-        $ symfony plugin:install sfEntityAttributeValuePlugin -s=beta
+        $ symfony plugin:install sfEntityAttributeValuePlugin 
 
   * Activate the plugin in your project configuration file (in config/ProjectConfiguration.class.php).
 
@@ -70,6 +70,10 @@ Installation
           .settings:
             enabled_modules: [ default, eav ]
 
+  * publish assets
+        
+        $ symfony plugin:publish-assets
+
   * Clear your cache
 
         $ symfony cc
@@ -77,7 +81,7 @@ Installation
   * Add the sfWidgetFormEav as a widgetSchema in all forms that have the EavBehavior. The sfEntityAttributeValuePlugin
   is enough smart to render the widget in create or insert mode.
   
-        // ParentModel
+        # lib/form/doctrine/ParentModelForm.php
         class ParentModelForm extends BaseParentModelForm
         {
             public function configure()
@@ -86,7 +90,7 @@ Installation
             }
         }
         
-        // Child model
+        # lib/form/doctrine/ChildModelForm.php
         class ChildModelForm extends BaseChildModelForm
         {
             public function configure()
@@ -94,6 +98,11 @@ Installation
                 $this->widgetSchema['eav'] = new sfWidgetFormEav($this);
             }
         }
+
+  * Add the widget "eav" in the form partial 
+
+        # _form.php
+        echo $form['eav']-> renderRow();
 
 (future improvements)
 

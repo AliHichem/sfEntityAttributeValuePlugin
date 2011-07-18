@@ -22,7 +22,7 @@ class eavDynamicShowForm extends BaseForm
     const FORM_NAME = 'eav_Dynamics_Show';
 
     /**
-     * configure le formulaire
+     * configure the from
      *
      * @return void
      */
@@ -78,7 +78,7 @@ class eavDynamicShowForm extends BaseForm
     }
 
     /**
-     * Configure le champ selon son type
+     * configure field by type
      *
      * @param <type> $field champ
      *

@@ -19,8 +19,7 @@ class PluginEavValuesTable extends Doctrine_Table
     }
 
     /**
-     * supprime les eav valeurs depuis l'identifant de la ressource
-     * et celui de l'entité
+     * delete eav be resource id and entity id
      *
      * @param int $destination_ressource_id identifiant de la ressource
      * @param int $destination_entity_id    identifiant de l'entité

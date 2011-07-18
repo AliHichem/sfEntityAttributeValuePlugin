@@ -54,7 +54,7 @@ class eavComponents extends sfComponents
         $this->formId = eavDynamicForm::FORM_NAME . '-' . implode("-", $options);
         $this->eavDynamicForm = new eavDynamicForm($options);
         $formStructure = EavTable::buildFormStructure($this->source_ressource_id, $this->source_entity_id);
-        if ($this->destination_entity_id == "" && $request->isMethod('post'))
+        if ($this->destination_entity_id == "" && $request->isMethod('post') && isset($_POST[eavDynamicShowForm::FORM_NAME]))
         {
             $keys = array_keys($_POST);
             foreach ($keys as $key)
@@ -99,7 +99,7 @@ class eavComponents extends sfComponents
         $this->formId = eavDynamicShowForm::FORM_NAME . '-' . implode("-", $options);
         $this->eavDynamicShowForm = new eavDynamicShowForm($options);
         $formStructure = EavTable::buildFormStructure($this->source_ressource_id, $this->source_entity_id);
-        if ($this->destination_entity_id == "" && $request->isMethod('post'))
+        if ($this->destination_entity_id == "" && $request->isMethod('post') && isset($_POST[eavDynamicShowForm::FORM_NAME]))
         {
             $keys = array_keys($_POST);
             foreach ($keys as $key)

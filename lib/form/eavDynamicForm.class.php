@@ -22,7 +22,7 @@ class eavDynamicForm extends BaseForm
     const FORM_NAME = 'eav_Dynamics';
 
     /**
-     * configure le formulaire
+     * configure the form
      *
      * @return void
      */
@@ -48,9 +48,9 @@ class eavDynamicForm extends BaseForm
     }
 
     /**
-     * Configure les champs
+     * Configure form fields
      *
-     * @param <type> $formStructure structure du formulaire
+     * @param <type> $formStructure form structure
      *
      * @return void
      */
@@ -88,9 +88,9 @@ class eavDynamicForm extends BaseForm
     }
 
     /**
-     * Configure le champ selon son type
+     * configure field by type
      *
-     * @param <type> $field champ
+     * @param <type> $field field
      *
      * @return void
      */
@@ -295,8 +295,7 @@ class eavDynamicForm extends BaseForm
     }
 
     /**
-     * Vérifie depuis la config si le fomulaire génère une structure HTML
-     * pour une nouvelle exploitation
+     * Check is new form
      *
      * @return boolean
      */

@@ -19,11 +19,10 @@ class PluginEavTable extends Doctrine_Table
     
     
     /**
-     * retourne la structure des information complémentaires
-     * dans un tableau
-     *
-     * @param int $ressource_id identifiant de la ressource
-     * @param int $entity_id    identifiant de l'entité
+     * Return Eav structure as a table
+     * 
+     * @param int $ressource_id resouce id
+     * @param int $entity_id    entity id 
      *
      * @return array
      */

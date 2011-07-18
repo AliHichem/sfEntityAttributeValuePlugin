@@ -14,15 +14,9 @@ abstract class PluginEav extends BaseEav
 {
 
     /**
-     * Enregistre les information complémentaires de la ressource
-     * spécifié dans la BD. En édition, la mise à jour ne supporte que les
-     * libellé des eav, les choix/options des eav multiples (checkbox,radio
-     * select) seront bloquée dans le rendu HTML
+     * Save eav specefic resource into the database.
      *
-     * @param sfEvent $event évènements
-     *
-     * @todo: modifier l'enregistrement de façon à supporter la modification
-     * des options des eav multiples.
+     * @param sfEvent $event event
      *
      * @return  void
      */
@@ -198,9 +192,9 @@ abstract class PluginEav extends BaseEav
     }
 
     /**
-     * enregistre les valeurs du groupe d'information complémentaires
+     * save Eav group values into database
      *
-     * @param sfEvent $event object evènement
+     * @param sfEvent $event object event
      *
      * @return void
      */
@@ -264,6 +258,15 @@ abstract class PluginEav extends BaseEav
         }
     }
 
+    /**
+     * Get the fisrt closer EavGroup
+     *
+     * @param <type> $source_ressource_id
+     * @param <type> $source_entity_id
+     * @param <type> $destination_ressource_id
+     * @param <type> $eavForms
+     * @return void
+     */
     public static function getFirstClosestEavGroup($source_ressource_id, $source_entity_id, $destination_ressource_id, &$eavForms)
     {
         $context = sfContext::hasInstance() ? sfContext::getInstance() : NULL;
@@ -302,7 +305,7 @@ abstract class PluginEav extends BaseEav
     }
 
     /**
-     * Enlève les index invalides et les séparateurs
+     * Remove invalid indexes and separators
      *
      * @param array &$table array reference
      *
@@ -376,9 +379,9 @@ abstract class PluginEav extends BaseEav
     }
 
     /**
-     * enregistre les groupes d'information complémentaires selon la source
+     * Save Eav groups by source
      *
-     * @param <type> $eavForm object evènement
+     * @param <type> $eavForm object 
      *
      * @return void
      */
@@ -394,11 +397,11 @@ abstract class PluginEav extends BaseEav
     }
 
     /**
-     * enregistre les groupes d'information complémentaires selon la destination
+     * Save Eav groups by destination
      *
      * @param <type> $source      source
      * @param <type> $destination destination
-     * @param <type> $fields      tableau des champs
+     * @param <type> $fields      table
      *
      * @return void
      */
@@ -414,12 +417,12 @@ abstract class PluginEav extends BaseEav
     }
 
     /**
-     * Enregistre le champs
+     * Save field
      *
-     * @param <type> $destination_ressource_id identifiant de la ressource
-     * @param <type> $destination_entity_id    identifiant de l'entité
-     * @param <type> $eavId                    identifiant de l'attribut
-     * @param <type> $eavInputValue            valeur de l'input/group d'input
+     * @param <type> $destination_ressource_id resource id
+     * @param <type> $destination_entity_id    entity id
+     * @param <type> $eavId                    attribute id
+     * @param <type> $eavInputValue            input value
      *
      * @return void
      */
